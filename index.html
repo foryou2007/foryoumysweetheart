@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CofesiónDeAmor</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="1024" height="768">
+                Apoyame suscribiendote a mi canal de YouTube :3    
+
+              </canvas>
+    <!-- <div style="color:red;font-size:45px;position:absolute;top:400px;left:200px">Pragya <i class='fa fa-heart'></i> </div> -->
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">For you My heart<i class='fa fa-heart text-danger '></i></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Esto es para ti, para que sepas que eres lo mas importante para mi.
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <p style="position:absolute;left:15px"><small class='text-muted'>Para ti con todo mi amor<i class='fa fa-heart text-danger'></i> </small></p>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="position:absolute;top:200px;left:160px">
+        <img class="img-thumbnail" src='girlll.jpeg' style='height:200px;width:200px'>
+        <p class='text-danger text-center'>Ximena<i class='fa fa-heart'></i></p>
+
+    </div>
+
+    <button type="button" style="position:absolute;right:200px;bottom:300px" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#feelings"> <i class='fa fa-heart '></i>Dale Click Aquí</button>
+
+    <div class="modal fade" id="feelings">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Mi vida</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Cómo podría sonreír, cómo podría ser feliz, si algún día me enterase, de que no estás enamorada de mí.<i class=' text-danger fa fa-heart'></i> Cuando te acercaste a mí, algo empezó a recorrer mi interior. Aunque creía que no existía, me llené de un sentimiento llamado amor.
+                    <i class=' text-danger fa fa-heart'></i> Eres lo más preciado de mi vida. Has
+                    fascinado mi corazón y cautivado mi mente con tu hermosa presencia y sigo soñando contigo<i class=' text-danger fa fa-heart'></i> Arte es el amor, y por eso mismo, escribo estos versos para conquistar tu corazón. <i class=' text-danger fa fa-heart'></i> Cada
+                    momento que paso contigo es lo más fascinante y encantador, que pueda pasar en mi vida.<i class=' text-danger fa fa-heart'></i>Por lo que quiero decirte que me encantaria compartir mi vida contigo.<i class=' text-danger fa fa-heart'></i>Te
+                    escribo esto como una muestra de mi amor por ti te amo demasiado niña hermosa que se robo mi corazon desde el primer dia en que te vi <3 .<i class=' text-danger fa fa-heart'></i><i class=' text-danger fa fa-heart'></i><i class=' text-danger fa fa-heart'></i><a href='Explosion.html'>Click aquí</a>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <p style="position:absolute;left:15px"><small class='text-muted'>Para ti con todo mi amor<i class='fa fa-heart text-danger'></i> </small></p>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="position:absolute;top:200px;left:160px">
+        <img class="img-thumbnail" src='girlll.jpeg' style='height:200px;width:200px'>
+        <p class='text-danger text-center'>Ximena<i class='fa fa-heart'></i></p>
+
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    $('#myModal').modal('show');
+
+    var c = document.getElementById("canvas");
+    var a = c.getContext("2d");
+
+    var w = c.width;
+    var h = c.height;
+
+    var hearts = [];
+
+    function Heart(x, y, size, direction, alpha) {
+        this.hue = (Math.random() * 25) | 0 + 10;
+        this.x = x;
+        this.y = y;
+        this.size = (Math.random() * 60) | 0 + 50;
+        this.direction = "u";
+        this.a = 1;
+    }
+
+    c.onmousemove = function(e) {
+        var mouseX, mouseY;
+
+        if (e.offsetX) {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+        } else if (e.layerX) {
+            mouseX = e.layerX;
+            mouseY = e.layerY;
+        }
+
+        hearts.push(new Heart(mouseX - 4, mouseY - 4));
+    };
+
+    window.setInterval(function() {
+
+        a.fillStyle = "#fff";
+        a.fillRect(0, 0, w, h);
+
+        if (hearts.length === 0) return;
+
+        hearts = hearts.filter(function(val) {
+            return val.y >= 0 && val.a >= 0;
+        });
+
+        hearts.forEach(function(heart) {
+
+            heart.y = heart.y + 2;
+            heart.a = heart.a - 0.01;
+
+            if (heart.direction === "u") {
+                heart.size = heart.size + 5;
+                if (heart.size >= 100) heart.direction = "d";
+            } else {
+                heart.size = heart.size - 5;
+                if (heart.size <= 10) heart.direction = "u";
+            }
+
+            a.save();
+            a.font = heart.size + 'px Arial';
+            a.fillStyle = "hsla(" + heart.hue + ",100%,50%," + heart.a + ")";
+            a.fillText('♥', heart.x, heart.y);
+            a.restore();
+
+        });
+    }, 17);
+</script>
+
+</html>
+
+
+<!-- Dejaré el link de descarga -->
